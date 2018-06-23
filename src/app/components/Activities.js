@@ -104,6 +104,7 @@ export class Activities extends React.Component {
 
         return (
             <div>
+                <h3>Activities</h3>
                 <div><ChartistGraph
                     data={data}
                     options={options}

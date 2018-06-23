@@ -53,7 +53,7 @@ function createServer(){
 
     server.get('/activities', function (req, res) {
      // res.setHeader('Access-Control-Allow-Origin', '*');
-      let url = `https://www.strava.com/api/v3/athlete/activities?per_page=15&access_token=${accessToken}`;
+      let url = `https://www.strava.com/api/v3/athlete/activities?per_page=20&access_token=${accessToken}`;
       request(url, function (err, response, body) {
         if (err){
           res.status(500).send('Problem occurred when fetching athletes stats');
