@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jshint hello.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +14,9 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.5"
   },
   "engines": {
     "node": "9.11.1"
