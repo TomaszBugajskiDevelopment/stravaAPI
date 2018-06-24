@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jshint hello.js"
+    "test": "jshint hello.js && npm run eslint",
+    "eslint": "eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "request": "^2.87.0"
   },
   "devDependencies": {
+    "eslint-plugin-ejs": "0.0.2",
     "jshint": "^2.9.5"
   },
   "engines": {
