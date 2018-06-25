@@ -24,7 +24,7 @@
 
     <p>Pokonany dystans podczas twoich ostatnich aktywności: </p>
     <div class="ct-chart" id="chart1"></div>   
-
+  
 
     <script>   
         var distance = <%-JSON.stringify(distArr)%>;
@@ -42,8 +42,8 @@
         var chart = new Chartist.Bar('#chart1', data, options);
 
         var seq = 0,
-            delays = 80,
-            durations = 500;
+            delays = 40,
+            durations = 300;
 
         chart.on('created', function () {
             seq = 0;
@@ -56,7 +56,7 @@
                 data.element.animate({
                     opacity: {
                         // The delay when we like to start the animation
-                        begin: seq * delays + 1000,
+                        begin: seq * delays + 100,
                         // Duration of the animation
                         dur: durations,
                         // The value where the animation should start
@@ -99,7 +99,12 @@
         
         
     </script>
-
+    <form action="/chartistTest" method="get">
+        <input type="submit" class="ghost-button" value="RUNS">
+    </form>
+    <form action="/chartistTestRides" method="get">
+        <input type="submit" class="ghost-button" value="RIDES">
+    </form>
     <form action="/" method="get">
         <input type="submit" class="ghost-button" value="Back">
     </form>

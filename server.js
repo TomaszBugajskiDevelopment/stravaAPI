@@ -29,7 +29,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/chartistTest", function (req, res) {
-    let url = "https://www.strava.com/api/v3/athlete/activities?per_page=15&access_token="+accessToken;
+    let url = "https://www.strava.com/api/v3/athlete/activities?per_page=35&access_token="+accessToken;
     var distArr = [];
     var dateArr = [];
     var activityCounter = 0;
@@ -37,18 +37,45 @@ app.get("/chartistTest", function (req, res) {
         let activities = JSON.parse(body);
 
         for (var i = 0, len = activities.length; i < len; i++) {
-            if (activityCounter > 11)
+            if (activityCounter > 13)
                 break;
             if (activities[i].type === "Run") {
                 distArr.push((activities[i].distance / 1000).toFixed(2));
                 var dateFormat = new Date(activities[i].start_date);
                 var output = formatDate(dateFormat);
                 dateArr.push(output);
+                activityCounter++;
             }
         }
         res.render("chartist", { distArr: distArr, dateArr: dateArr });
     });
 });
+
+app.get("/chartistTestRides", function (req, res) {
+    let url = "https://www.strava.com/api/v3/athlete/activities?per_page=200&access_token="+accessToken;
+    var distArr = [];
+    var dateArr = [];
+    var activityCounter = 0;
+    request(url, function (err, response, body) {
+        let activities = JSON.parse(body);
+
+        for (var i = 0, len = activities.length; i < len; i++) {
+            if (activityCounter > 13)
+                break;
+            if (activities[i].type === "Ride") {
+                distArr.push((activities[i].distance / 1000).toFixed(2));
+                var dateFormat = new Date(activities[i].start_date);
+                var output = formatDate(dateFormat);
+                dateArr.push(output);
+                activityCounter++;
+
+            }
+        }
+        res.render("chartist", { distArr: distArr, dateArr: dateArr });
+    });
+});
+
+
 
 app.get("/stats", function (req, res) {
     let url = "https://www.strava.com/api/v3/athletes/"+id+"/stats?access_token="+accessToken;
