@@ -11,14 +11,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 app.get("/", function (req, res) {
-    res.render("login");
-
-})
-
-
-app.get("/main", function (req, res) {
     let url = "https://www.strava.com/api/v3/athlete?access_token="+accessToken;
     request(url, function (err, response, body) {
         if (err) {
