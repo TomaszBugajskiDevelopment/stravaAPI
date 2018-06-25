@@ -9,14 +9,10 @@
   <body>
     <div class="container">
       <fieldset>
-        <% if(athlete !== null){ %>
-            <p><%= athlete %></p>
-        <% } %>
-  
-        <% if(error !== null){ %>
-            <p><%= error %></p>
-        <% } %>
-        <form action="/stats" method="get">
+        Client ID:<br>
+        <input type="text" name="id" value="20905149">
+        <br>
+        <form action="/main" method="get">
             <input type="submit" class="ghost-button" value="Get Stats">
         </form>
       </fieldset>

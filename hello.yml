@@ -1,0 +1,14 @@
+config:
+  target: 'https://stravatai.herokuapp.com'
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 50
+      name: "Warm up the application"
+    - duration: 120
+      arrivalRate: 20
+      name: "Sustained max load"
+scenarios:
+  - flow:
+    - get:
+        url: "/chartistTest"
