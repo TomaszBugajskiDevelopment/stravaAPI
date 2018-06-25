@@ -37,7 +37,7 @@ app.get("/chartistTest", function (req, res) {
         let activities = JSON.parse(body);
 
         for (var i = 0, len = activities.length; i < len; i++) {
-            if (activityCounter > 12)
+            if (activityCounter > 11)
                 break;
             if (activities[i].type === "Run") {
                 distArr.push((activities[i].distance / 1000).toFixed(2));
