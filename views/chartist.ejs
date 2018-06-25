@@ -15,6 +15,16 @@
             height: 300px;
             width: 100%;
         }
+
+        .secondary_run{
+            width: 30%;
+            float: left;
+        }
+        
+        .secondary_ride{
+            width: 30%;
+            float: right;
+        }
     </style>
 
 </head>
@@ -99,11 +109,11 @@
         
         
     </script>
-    <form action="/chartistTest" method="get">
-        <input type="submit" class="ghost-button" value="RUNS">
+    <form  action="/chartistTest" method="get">
+        <input class="secondary_run" type="submit" class="ghost-button" value="RUNS">
     </form>
     <form action="/chartistTestRides" method="get">
-        <input type="submit" class="ghost-button" value="RIDES">
+        <input class="secondary_ride" type="submit" class="ghost-button" value="RIDES">
     </form>
     <form action="/" method="get">
         <input type="submit" class="ghost-button" value="Back">
